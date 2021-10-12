@@ -34,7 +34,7 @@ workflows:
                     else
                         echo "TESTTTTTTTTTTT"
                         gcloud beta compute scp $apkPath --zone "us-central1-b" geethukn@magnifi-mobile:~
-                        gcloud beta compute ssh --ssh-flag="-T" --zone "us-central1-b" "geethukn@magnifi-mobile" -- "sudo docker exec magnifi-mobile-kvm2 /bin/bash -c "/test.sh "'"$apkPath"'" "'"$GITHUB_ACCESS_TOKEN"'""""
+                        gcloud beta compute ssh --ssh-flag="-T" --zone "us-central1-b" "geethukn@magnifi-mobile" -- "sudo docker exec magnifi-mobile-kvm2 /bin/bash -c "/test.sh "'"$apkPath"'" "'"$GITHUB_ACCESS_TOKEN"'"""
                     fi
             email:
                recipients:
