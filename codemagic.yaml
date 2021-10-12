@@ -22,7 +22,7 @@ workflows:
                - name: gcp instance connection and running test cases
                  script: |
                     set -ex
-                    echo $JSON_KEY > ./gcloud_key_file.json
+                    echo $GCLOUD_JSON_KEY > ./gcloud_key_file.json
                     gcloud auth activate-service-account --key-file=gcloud_key_file.json
                     gcloud config set project $GCLOUD_PROJECT
                     #!/bin/sh
