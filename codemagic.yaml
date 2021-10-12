@@ -32,8 +32,9 @@ workflows:
                         echo "No apks were found"
                         exit 1
                     else
-                        gcloud beta compute scp $apkPath geethukn@magnifi-mobile:~ --zone "us-central1-b"
-                        gcloud beta compute ssh --ssh-flag="-T" --zone "us-central1-b" "geethukn@magnifi-mobile" -- "./run.sh $GITHUB_ACCESS_TOKEN"
+                        echo "Publishing $apkPath to GCP instance"
+	                    gcloud compute scp $apkPath geethukn@magnifi-mobile:~ --zone "us-central1-b"
+                        gcloud beta compute ssh --ssh-flag="-T" --zone "us-central1-b" "geethukn@magnifi-mobile" -- "./run.sh $GCLOUD_PROJECT"
             email:
                recipients:
                    - gavisiddayyab@datatemplate.com
